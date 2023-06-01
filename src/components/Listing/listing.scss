@@ -1,0 +1,12 @@
+.contact-list {
+    display: flex;
+    flex-flow: column;
+    list-style: none;
+    align-items: flex-start;
+    padding: 0;
+}
+
+svg {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
