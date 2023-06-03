@@ -10,7 +10,7 @@ const BookContainer = () => {
     //FETCHING BOOKS AT ONLOAD OF THE APPLICATIONS
     useEffect(() => {
         fetchBooks();
-    }, []);
+    }, [fetchBooks]);
 
   return (
     <div className='app'>
