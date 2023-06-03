@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react';
+import BookContext from '../../context/BookContext';
 
-const BookCreate = ({onCreate}) => {
-  
+const BookCreate = () => {
   const [title, setTitle] = useState('');
+  const {createBook} = useContext(BookContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onCreate(title);
+    createBook(title);
     setTitle('');
   }
 

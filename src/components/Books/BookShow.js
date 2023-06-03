@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import BookEditComp from './BookEdit';
+import BookContext from '../../context/BookContext';
 
 const BookShow = (props) => {
   const [showEdit, setShowEdit] = useState(false);
   const {id, title} = props.book;
+  const {deleteABook, editABook} = useContext(BookContext);
   // console.log(id, title);
   const handleDelete = () => {
-    props.deleteABook(id);
+    deleteABook(id);
   }
 
   const handleEdit = () => {
@@ -15,7 +17,7 @@ const BookShow = (props) => {
 
   const onSubmitForm = (id, newTitle) => {
     setShowEdit(false);
-    props.editABook(id, newTitle);
+    editABook(id, newTitle);
   }
 
   let titleHeading = <h3 className='title'>{title}</h3>;
